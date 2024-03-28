@@ -19,7 +19,7 @@
     <form hx-post="/count/" hx-swap="innerHTML" hx-target="#everything" htmx-indicator="#spinner">
       <p name="count" class="text-2xl font-semibold mb-4">The counter number is: {{ .Count }}</p>
       <input type="" name="count" class="hidden" name="" value="{{ .Count }}">
-      <button type="submit" class="bg-black text-white py-2 px-3 text-xl">Plus one</button>
+      <button type="submit" class="bg-black text-white py-2 px-3 text-xl hover:bg-white hover:text-black hover:border hover:border-white">Plus one</button>
     </form>
   </div>
   </body>
