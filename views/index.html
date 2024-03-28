@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="everything">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <link href="css/style.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.2" integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h" crossorigin="anonymous"></script>
   </head>
   <body>
   <div class="mx-auto items-center text-center my-auto justify-center pt-12">
     <img src="https://ih1.redbubble.net/image.1943889042.2181/raf,360x360,075,t,fafafa:ca443f4786.jpg" class="max-w-64 max-h-64 mx-auto flex justify-center" alt="">
     <h1 class="text-6xl text-light">WELCOME TO FIGO</h1>
     <p class="text-xl font-semibold mt-4">The simplest Go Fiber and HTMX template.</p>
+  </div>
+
+  <div class="mx-auto items-center text-center my-auto justify-center pt-12"> 
+    <form hx-post="/count/" hx-swap="innerHTML" hx-target="#everything" htmx-indicator="#spinner">
+      <p name="count" class="text-2xl font-semibold mb-4">The counter number is: {{ .Count }}</p>
+      <input type="" name="count" class="hidden" name="" value="{{ .Count }}">
+      <button type="submit" class="bg-black text-white py-2 px-3 text-xl">Plus one</button>
+    </form>
   </div>
   </body>
 </html>
